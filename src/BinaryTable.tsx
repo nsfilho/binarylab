@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import "./BinaryTable.css";
+import React from 'react';
+import './BinaryTable.css';
 
 const definedStrong = [1, 2, 4, 8, 16, 32, 64, 128];
-const strongNum = (num: number) =>
-    definedStrong.includes(num) ? <b>{num}</b> : num.toString();
+const strongNum = (num: number) => (definedStrong.includes(num) ? <b>{num}</b> : num.toString());
 
 interface BinaryProps {
     start: number;
@@ -13,7 +12,7 @@ interface BinaryProps {
 export const BinaryTable: React.FC<BinaryProps> = ({ start, count }) => {
     const columnsSize = Math.ceil(count / 5);
     return (
-        <div className="row" style={{ marginTop: "20px" }}>
+        <div className="row" style={{ marginTop: '20px' }}>
             <BinaryItem start={start} count={columnsSize} />
             <BinaryItem start={start + columnsSize} count={columnsSize} />
             <BinaryItem start={start + columnsSize * 2} count={columnsSize} />

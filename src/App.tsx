@@ -1,56 +1,41 @@
-import React from "react";
-import "./App.css";
-import { InputNumbers } from "./InputNumbers";
-import { BinaryTable } from "./BinaryTable";
+import React, { useState } from 'react';
+import './App.css';
+import { InputNumbers } from './InputNumbers';
+import { BinaryTable } from './BinaryTable';
+import { Macros } from './Macros';
+import { NavBar } from './NavBar';
 
 const App = () => {
+    const [view, setView] = useState('conversion');
+
     return (
         <div className="container">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">
-                    Binary Lab
-                </a>
-                <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="#">
-                                Conversion
-                                <span className="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                Table
-                            </a>
-                        </li>
-                    </ul>
+            <NavBar setView={setView} />
+            {view === 'conversion' && (
+                <div className="row" style={{ marginTop: '50px' }}>
+                    <div className="col-2"></div>
+                    <div className="col">
+                        <InputNumbers />
+                    </div>
+                    <div className="col-2"></div>
                 </div>
-            </nav>
-            <div className="row" style={{ marginTop: "50px" }}>
-                <div className="col-2"></div>
-                <div className="col">
-                    <InputNumbers />
+            )}
+            {view === 'macro' && (
+                <div className="row codeBlock">
+                    <div className="col"></div>
+                    <div className="col">
+                        <Macros />
+                    </div>
+                    <div className="col"></div>
                 </div>
-                <div className="col-2"></div>
-            </div>
-            <BinaryTable start={0} count={80} />
-            <BinaryTable start={80} count={80} />
-            <BinaryTable start={160} count={95} />
+            )}
+            {view === 'table' && (
+                <>
+                    <BinaryTable start={0} count={80} />
+                    <BinaryTable start={80} count={80} />
+                    <BinaryTable start={160} count={95} />
+                </>
+            )}
         </div>
     );
 };
