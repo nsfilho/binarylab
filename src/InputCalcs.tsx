@@ -82,18 +82,21 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
 
     const moveGroup = (source: string, to: string) => {
         const sourceItem = rows.find(i => i.name === source) as Row;
-        let find: boolean = false;
+        let ajust: number = 0;
         let updatedRows: Row[] = [];
         rows.forEach((i, x) => {
             if (i.name === to) {
+                ajust += 1;
                 if (i.order > sourceItem.order) {
-                    updatedRows.push(i);
-                    updatedRows.push({ ...sourceItem, order: x + 1 });
+                    updatedRows.push({ ...i, order: x });
+                    updatedRows.push({ ...sourceItem, order: x + ajust });
                     return;
                 } else updatedRows.push({ ...sourceItem, order: x });
-                find = true;
-            } else if (i.name === source) return;
-            updatedRows.push({ ...i, order: i.order + (find ? 1 : 0) });
+            } else if (i.name === source) {
+                ajust -= 1;
+                return;
+            }
+            updatedRows.push({ ...i, order: x + ajust });
         });
         setRows(updatedRows);
     };
