@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/binarylab/static/css/main.4ac4beae.chunk.css",
-    "main.js": "/binarylab/static/js/main.3afa9c22.chunk.js",
-    "main.js.map": "/binarylab/static/js/main.3afa9c22.chunk.js.map",
+    "main.css": "/binarylab/static/css/main.c656c362.chunk.css",
+    "main.js": "/binarylab/static/js/main.b1dbce88.chunk.js",
+    "main.js.map": "/binarylab/static/js/main.b1dbce88.chunk.js.map",
     "runtime-main.js": "/binarylab/static/js/runtime-main.20724579.js",
     "runtime-main.js.map": "/binarylab/static/js/runtime-main.20724579.js.map",
-    "static/js/2.e001b5e0.chunk.js": "/binarylab/static/js/2.e001b5e0.chunk.js",
-    "static/js/2.e001b5e0.chunk.js.map": "/binarylab/static/js/2.e001b5e0.chunk.js.map",
+    "static/js/2.07a7c6f4.chunk.js": "/binarylab/static/js/2.07a7c6f4.chunk.js",
+    "static/js/2.07a7c6f4.chunk.js.map": "/binarylab/static/js/2.07a7c6f4.chunk.js.map",
     "index.html": "/binarylab/index.html",
-    "precache-manifest.b6b355dcdbdc58e947e92876700fabab.js": "/binarylab/precache-manifest.b6b355dcdbdc58e947e92876700fabab.js",
+    "precache-manifest.fff4725a0ce18070776406f27669e785.js": "/binarylab/precache-manifest.fff4725a0ce18070776406f27669e785.js",
     "service-worker.js": "/binarylab/service-worker.js",
-    "static/css/main.4ac4beae.chunk.css.map": "/binarylab/static/css/main.4ac4beae.chunk.css.map",
-    "static/js/2.e001b5e0.chunk.js.LICENSE.txt": "/binarylab/static/js/2.e001b5e0.chunk.js.LICENSE.txt"
+    "static/css/main.c656c362.chunk.css.map": "/binarylab/static/css/main.c656c362.chunk.css.map",
+    "static/js/2.07a7c6f4.chunk.js.LICENSE.txt": "/binarylab/static/js/2.07a7c6f4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.20724579.js",
-    "static/js/2.e001b5e0.chunk.js",
-    "static/css/main.4ac4beae.chunk.css",
-    "static/js/main.3afa9c22.chunk.js"
+    "static/js/2.07a7c6f4.chunk.js",
+    "static/css/main.c656c362.chunk.css",
+    "static/js/main.b1dbce88.chunk.js"
   ]
 }
