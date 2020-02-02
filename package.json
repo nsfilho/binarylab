@@ -52,8 +52,7 @@
     "lint-staged": {
         "**/*.+(js|jsx|css|less|scss|ts|tsx|md)": [
             "eslint --fix",
-            "prettier --write",
-            "git add"
+            "prettier --write"
         ]
     },
     "devDependencies": {
