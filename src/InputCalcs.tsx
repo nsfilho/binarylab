@@ -16,7 +16,7 @@ interface Row {
 export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
     const [rows, setRows] = useState<Row[]>([
         {
-            order: 1,
+            order: 0,
             name: 'or',
             render: (
                 <>
@@ -32,7 +32,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
             )
         },
         {
-            order: 2,
+            order: 1,
             name: 'and',
             render: (
                 <>
@@ -48,7 +48,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
             )
         },
         {
-            order: 3,
+            order: 2,
             name: 'xor',
             render: (
                 <>
@@ -64,7 +64,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
             )
         },
         {
-            order: 4,
+            order: 3,
             name: 'shift',
             render: (
                 <>
@@ -81,6 +81,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
     ]);
 
     const moveGroup = (source: string, to: string) => {
+        if (source === to) return;
         const sourceItem = rows.find(i => i.name === source) as Row;
         let ajust: number = 0;
         let updatedRows: Row[] = [];
