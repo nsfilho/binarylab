@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b5f266132affd035f17e0a99dd0de3c3",
+    "revision": "e9a555e4fa6598828b681d39310bfc65",
     "url": "/binarylab/index.html"
   },
   {
-    "revision": "9688bc078f7c169dfcb2",
+    "revision": "1b5b95b5f883b62d219f",
     "url": "/binarylab/static/css/main.c656c362.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/binarylab/static/js/2.07a7c6f4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9688bc078f7c169dfcb2",
-    "url": "/binarylab/static/js/main.232a46d3.chunk.js"
+    "revision": "1b5b95b5f883b62d219f",
+    "url": "/binarylab/static/js/main.22f4ea0d.chunk.js"
   },
   {
     "revision": "37f1c23eb3245b8f6669",
