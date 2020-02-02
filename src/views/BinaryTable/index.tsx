@@ -1,5 +1,5 @@
 import React from 'react';
-import './BinaryTable.css';
+import './index.css';
 
 const definedStrong = [1, 2, 4, 8, 16, 32, 64, 128];
 const strongNum = (num: number) => (definedStrong.includes(num) ? <b>{num}</b> : num.toString());

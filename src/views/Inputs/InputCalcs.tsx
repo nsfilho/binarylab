@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { InputGroup } from './InputGroup';
-import { InputStd } from './InputNumbers';
+import { InputGroup, InputStd } from './';
+import { useSelector } from 'react-redux';
+import { State } from '../../store';
 
-interface InputCalcsProps {
-    num1: number;
-    num2: number;
-}
+interface InputCalcsProps {}
 
 interface Row {
     order: number;
     name: string;
-    render: JSX.Element;
+    render: (num1: number, num2: number) => JSX.Element;
 }
 
-export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
+export const InputCalcs: React.FC<InputCalcsProps> = () => {
+    const decimal = useSelector((state: State) => state.inputs.decimal);
+    const m_num1 = parseInt(decimal.num1, 10);
+    const m_num2 = parseInt(decimal.num2, 10);
     const [rows, setRows] = useState<Row[]>([
         {
             order: 0,
             name: 'or',
-            render: (
+            render: (num1, num2) => (
                 <>
                     <InputStd id="ordec" label="OR: Decimal" value={(num1 | num2).toString(10)} />
                     <InputStd id="orbin" binary label="OR: Binary" value={(num1 | num2).toString(2)} />
@@ -34,7 +35,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
         {
             order: 1,
             name: 'and',
-            render: (
+            render: (num1, num2) => (
                 <>
                     <InputStd id="anddec" label="AND: Decimal" value={(num1 & num2).toString(10)} />
                     <InputStd id="andbin" binary label="AND: Binary" value={(num1 & num2).toString(2)} />
@@ -50,7 +51,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
         {
             order: 2,
             name: 'xor',
-            render: (
+            render: (num1, num2) => (
                 <>
                     <InputStd id="xordec" label="XOR: Decimal" value={(num1 ^ num2).toString(10)} />
                     <InputStd id="xorbin" binary label="XOR: Binary" value={(num1 ^ num2).toString(2)} />
@@ -66,7 +67,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
         {
             order: 3,
             name: 'shift',
-            render: (
+            render: (num1, num2) => (
                 <>
                     <InputStd id="shift2by1dec" label="Num2 << Num1: Decimal" value={(num2 << num1).toString(10)} />
                     <InputStd
@@ -108,7 +109,7 @@ export const InputCalcs: React.FC<InputCalcsProps> = ({ num1, num2 }) => {
                 .sort((a, b) => a.order - b.order)
                 .map(item => (
                     <InputGroup key={item.name} name={item.name} moveGroup={moveGroup}>
-                        {item.render}
+                        {item.render(m_num1, m_num2)}
                     </InputGroup>
                 ))}
         </>
